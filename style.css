@@ -21,8 +21,8 @@ body {
 .header-nav-inner {
   max-width: 1440px;
   width: 100%;
-  padding-left: 140px;
-  padding-right: 140px;
+  margin-left: 140px;
+  margin-right: 140px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -41,10 +41,18 @@ main {
 .content {
   padding-left: 140px;
   padding-right: 140px;
-  margin-top: 160px;
-  margin-bottom: 160px;
+  margin-top: 120px;
+  margin-bottom: 120px;
   overflow-y: auto;
   max-width: 1440px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Figtree;
+  font-size: 56px;
+  font-weight: 800;
+  color: white;
 }
 
 .galerie {
@@ -70,14 +78,6 @@ main {
   border-color: #6bc1e1;
 }
 
-h1 {
-  text-align: center;
-  font-family: Figtree;
-  font-size: 56px;
-  font-weight: 800;
-  color: white;
-}
-
 /*Footer*/
 
 footer {
@@ -86,13 +86,27 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   color: #627B84;
+  max-width: 1440px;
+}
+
+.logo-footer {
+  height: 32px;
 }
 
 .copyright {
   font-family: Figtree;
   font-weight: 400;
-  
+
 }
 
 .dialog-mode {
@@ -108,4 +122,57 @@ dialog-mode::backdrop {
 @font-face {
   font-family: Figtree;
   src: url("./fonts/Figtree-VariableFont_wght.ttf");
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    text-align: center;
+    font-family: Figtree;
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+  }
+
+  .header-nav-inner {
+    justify-content: center;
+  }
+
+  .content {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .galerie {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    text-align: center;
+    font-family: Figtree;
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+  }
+
+  .header-nav-inner {
+    justify-content: center;
+  }
+
+
+  .content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .galerie {
+    margin-top: 40px;
+  }
 }
