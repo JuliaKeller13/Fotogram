@@ -9,20 +9,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh
 }
 
 .header-nav {
   height: 100px;
   background-color: #09212a;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 140px;
-  padding-right: 140px;
+  justify-content: center;
 }
 
 .header-nav-inner {
   max-width: 1440px;
+  width: 100%;
+  padding-left: 140px;
+  padding-right: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -40,7 +44,6 @@ main {
   padding-right: 140px;
   margin-top: 160px;
   margin-bottom: 160px;
-  height: 100vh;
   overflow-y: auto;
   max-width: 1440px;
 }
