@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #06171e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-nav {
+  height: 100px;
+  background-color: #09212a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+.header-nav-inner {
+  max-width: 1440px;
+}
+
+.logo {
+  height: 40px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding-left: 140px;
+  padding-right: 140px;
+  margin-top: 160px;
+  margin-bottom: 160px;
+  height: 100vh;
+  overflow-y: auto;
+  max-width: 1440px;
+}
+
+.galerie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 80px;
+}
+
+.img-klein-ansicht {
+  height: 150px;
+  width: 150px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #124658;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.img-klein-ansicht:hover {
+  border-color: #6bc1e1;
+}
+
+h1 {
+  text-align: center;
+  font-family: Figtree;
+  font-size: 56px;
+  font-weight: 800;
+}
+
+/*Footer*/
+
+footer {
+  height: 120px;
+  background-color: #09212a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-mode {
+  border: 10px;
+  border-color: rgb(235, 32, 32);
+  border-radius: 10%;
+}
+
+dialog-mode::backdrop {
+  background-color: #272727;
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url("./fonts/Figtree-VariableFont_wght.ttf");
+}
