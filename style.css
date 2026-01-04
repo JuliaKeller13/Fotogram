@@ -5,7 +5,6 @@
 
 body {
   background-color: #06171e;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,6 +75,7 @@ h1 {
   font-family: Figtree;
   font-size: 56px;
   font-weight: 800;
+  color: white;
 }
 
 /*Footer*/
@@ -86,6 +86,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #627B84;
+}
+
+.copyright {
+  font-family: Figtree;
+  font-weight: 400;
+  
 }
 
 .dialog-mode {
