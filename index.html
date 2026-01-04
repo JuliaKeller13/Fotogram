@@ -19,24 +19,24 @@
       <h1>Your personal photo album</h1>
       <section class="galerie" id="galerie"></section>
       <!-- <button aria-haspopup="dialog" aria-controls="dialogMode" onclick="openDialog()">Dialog öffnen</button> -->
-      <!-- <dialog
-          class="dialog-mode"
-          id="dialogMode"
-          aria-labelledby="dialogTitel"
-          aria-describedby="dialogDescription"
-        >
-          <header>
-            <h2 id="dialogTitel">Überschrift vom Dialog-Fenster</h2>
-          </header>
-          <section>
-            <p id="dialogDescription">hier kommt die Inhalt</p>
-          </section>
-          <footer>
-            <button aria-label="Dialog schließen" onclick="closeDialog()">
-              Schließen
-            </button>
-          </footer>
-        </dialog> -->
+      <dialog class="dialog-mode" id="dialogMode" aria-labelledby="dialogTitel" aria-describedby="dialogDescription">
+        <header>
+          <div class="header-inner-dialog" >
+            <h2 id="dialogTitel">Name vom Bild</h2>
+            <img class="kreuz-schließen" src="./img/kreuz.png" alt="Kreuz zum Fenster schließen" onclick="closeImg()">
+          </div>
+        </header>
+        <section>
+          <p id="dialogDescription">hier kommt die Inhalt</p>
+        </section>
+        <footer>
+          <div class="footer-inner-dialog">
+            <img class="previous-img" src="./img/pfeil-left.png" alt="Pfeil zun nächsten Bild" onclick="closeImg()">
+            <div class="img-number" id="imgNumber"></div>
+            <img class="next-img" src="./img/pfeil-right.png" alt="Pfeil zun vorheriges Bild" onclick="closeImg()">
+          </div>
+        </footer>
+      </dialog>
     </div>
   </main>
   <footer>

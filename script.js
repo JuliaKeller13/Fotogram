@@ -17,13 +17,14 @@ const imgs = [
   "./img/tree.jpg",
 ];
 
-function openDialog() {
+function openImg() {
   dialogRef.showModal();
 }
 
-function closeDialog() {
+function closeImg() {
   dialogRef.close();
 }
+
 
 function generateImgs() {
   const galerieRef = document.getElementById("galerie");
@@ -34,5 +35,16 @@ function generateImgs() {
 }
 
 function getNotesHtml(i) {
-  return `<img class="img-klein-ansicht" src="${imgs[i]}" alt="Bild ${i + 1}">`;
+  return `<img class="img-klein-ansicht" src="${imgs[i]}" alt="Bild ${i + 1}" onclick="openImg()">`;
+}
+
+//Nummer vom Bild
+
+function getNumberInDialog() {
+  const imgNumber = document.getElementById("imgNumber");
+
+  for (let i = 0; i < imgs.length; i++) {
+     imgNumber.innerHTML += `<p>${imgs[i]}/12</p>`;
+  }
+
 }

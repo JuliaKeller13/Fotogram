@@ -60,7 +60,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
   margin-top: 80px;
 }
 
@@ -109,15 +109,62 @@ footer {
 
 }
 
+/*Dialog mode*/
+
 .dialog-mode {
-  border: 10px;
-  border-color: rgb(235, 32, 32);
-  border-radius: 10%;
+  background-color: #09212A;
+  height: 80vh;
+  width: 80vh;
+  border-radius: 40px;
+  border: 0;
+  padding: 40px;
 }
 
 dialog-mode::backdrop {
   background-color: #272727;
 }
+
+
+
+.header-inner-dialog{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kreuz-schließen:hover{
+  content: url("./img/kreuz-hover.png");
+  cursor: pointer;
+}
+
+.kreuz-schließen:active {
+  content: url("./img/kreuz-while\ pressing.png");
+  cursor: pointer;
+}
+
+/*Footer Dialog*/
+
+.footer-inner-dialog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.previous-img:hover{
+  content: url("./img/pfeil-left-hover.png");
+  cursor: pointer;
+}
+
+.next-img:hover{
+  content: url("./img/pfeil-right-hover.png");
+  cursor: pointer;
+}
+
+
+
+/*Responsive*/
 
 @font-face {
   font-family: Figtree;
