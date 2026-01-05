@@ -24,7 +24,8 @@
           <header>
             <div class="header-inner-dialog">
               <h2 id="dialogTitel"></h2>
-              <img class="kreuz-schließen" src="./img/kreuz.png" alt="Kreuz zum Fenster schließen" onclick="closeImg()">
+              <img class="kreuz-schließen" id="closeDialog" src="./img/kreuz.png" alt="Kreuz zum Fenster schließen" onclick="closeImg()"
+                tabindex="0">
             </div>
           </header>
           <section class="dialog-section-big-img">
@@ -32,10 +33,11 @@
           </section>
           <footer>
             <div class="footer-inner-dialog">
-              <img class="previous-img" src="./img/pfeil-left.png" alt="Pfeil zun nächsten Bild"
-                onclick="previousImg()">
+              <img class="previous-img" id="previousImg" src="./img/pfeil-left.png" alt="Pfeil zun nächsten Bild" onclick="previousImg()"
+                tabindex="0">
               <div class="img-number" id="imgNumber"></div>
-              <img class="next-img" src="./img/pfeil-right.png" alt="Pfeil zun vorheriges Bild" onclick="nextImg()">
+              <img class="next-img" id="nextImg" src="./img/pfeil-right.png" alt="Pfeil zun vorheriges Bild" onclick="nextImg()"
+                tabindex="0">
             </div>
           </footer>
         </div>

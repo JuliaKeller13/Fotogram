@@ -13,7 +13,7 @@ const imgs = [
   "./img/erde.jpg",
   "./img/fields.jpg",
   "./img/fluffy-bird-string.jpg",
-   "./img/landscape.jpg",
+  "./img/landscape.jpg",
   "./img/leopard.jpg",
   "./img/little-bird.jpg",
   "./img/mountain-sky.jpg",
@@ -65,7 +65,16 @@ function generateImgs() {
 }
 
 function getNotesHtml(i) {
-  return `<img class="img-klein-ansicht" src="${imgs[i]}" alt="Bild ${i + 1}" onclick="openImg(${i})">`;
+  return `
+    <img 
+      class="img-klein-ansicht"
+      src="${imgs[i]}"
+      alt="${imgNames[i]}"
+      tabindex="0"
+      onclick="openImg(${i})"
+      onkeydown="handleKey(event, function () { openImg(${i}); })"
+    >
+  `;
 }
 
 
@@ -79,3 +88,28 @@ function nextImg() {
   currentImgIndex = (currentImgIndex + 1) % imgs.length;
   openImg(currentImgIndex);
 }
+
+//keyboard fuction global
+function handleKey(event, action) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    action();
+  }
+}
+//Event-Listener
+
+document.getElementById("previousImg")
+  .addEventListener("keydown", function (e) {
+    handleKey(e, previousImg);
+  });
+
+document.getElementById("nextImg")
+  .addEventListener("keydown", function (e) {
+    handleKey(e, nextImg);
+  });
+
+document.getElementById("closeDialog")
+  .addEventListener("keydown", function (e) {
+    handleKey(e, closeImg);
+  });
+
