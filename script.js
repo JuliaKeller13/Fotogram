@@ -8,7 +8,7 @@ const dialogTitle = document.getElementById("dialogTitel");
 
 const imgs = [
   "./img/bird.jpg",
-  "./img/clouded.png",
+  "./img/clouded.jpg",
   "./img/duck.jpg",
   "./img/erde.jpg",
   "./img/fields.jpg",

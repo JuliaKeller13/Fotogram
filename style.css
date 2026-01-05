@@ -3,6 +3,28 @@
   margin: 0;
 }
 
+/*fonts and headlines*/
+
+@font-face {
+  font-family: Figtree;
+  src: url("./fonts/Figtree-VariableFont_wght.ttf");
+}
+
+h1 {
+  text-align: center;
+  font-family: Figtree;
+  font-size: 56px;
+  font-weight: 800;
+  color: white;
+}
+
+h2 {
+  font-family: Figtree;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+}
+
 body {
   background-color: #06171e;
   display: flex;
@@ -11,6 +33,7 @@ body {
   min-height: 100vh;
 }
 
+/*Header*/
 .header-nav {
   height: 100px;
   background-color: #09212a;
@@ -32,6 +55,7 @@ body {
   height: 40px;
 }
 
+/*Content section*/
 main {
   display: flex;
   justify-content: center;
@@ -45,21 +69,6 @@ main {
   margin-bottom: 120px;
   overflow-y: auto;
   max-width: 1440px;
-}
-
-h1 {
-  text-align: center;
-  font-family: Figtree;
-  font-size: 56px;
-  font-weight: 800;
-  color: white;
-}
-
-h2 {
-  font-family: Figtree;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 24px;
 }
 
 .galerie {
@@ -120,8 +129,8 @@ h2 {
 
 .dialog-mode {
   background-color: #09212A;
-  height: 80vh;
-  width: 80vh;
+  height: 100vh;
+  width: 100vh;
   border-radius: 40px;
   border-style: solid;
   border: 2px;
@@ -213,13 +222,6 @@ dialog::backdrop {
 }
 
 /*Responsive*/
-
-@font-face {
-  font-family: Figtree;
-  src: url("./fonts/Figtree-VariableFont_wght.ttf");
-}
-
-
 
 @media screen and (max-width: 1024px) {
   h1 {
