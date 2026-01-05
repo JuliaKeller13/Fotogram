@@ -41,13 +41,13 @@ const imgNames = [
 ];
 
 
-//Bild im Großformat, Nummer vom Bild anzeigen
+//Bild im Großformat, Name und Nummer vom Bild anzeigen
 function openImg(index) {
   currentImgIndex = index;
   bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${index + 1}" class="big-img">`;
-  imgNumberRef.textContent = `${index + 1} / ${imgs.length}`;
+  imgNumberRef.textContent = `${index + 1} / ${imgs.length}`; //Nummer anzeigen
   dialogTitle.innerHTML = "";
-  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>`
+  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>` //Name anzeigen
   dialogRef.showModal();
 }
 
