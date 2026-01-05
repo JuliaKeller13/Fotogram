@@ -40,7 +40,6 @@ const imgNames = [
   "Baum",
 ];
 
-
 //Bild im Großformat, Name und Nummer vom Bild anzeigen
 function openImg(index) {
   currentImgIndex = index;
@@ -88,16 +87,23 @@ function nextImg() {
   openImg(currentImgIndex);
 }
 
-//keyboard fuction global
+//Dialog schließen, wenn man auf backdrop clickt
+function handleDialogClick(event) {
+  if (!event.target.closest(".dialog-mode-inner")) { //closest sucht nach außen Element mit dieser ID, gibt true zurück (mit ! wird die Aussage auf false gesetzt). Event.targen hat Wert eines clicks (z.B. auf img ist <img>)
+    closeImg();
+  }
+}
+
+dialogRef.addEventListener("click", handleDialogClick); //Wenn irgendwo im Dialog geklickt wird, wird die Funktion handleDialogClick aufgerufen
+
+//Keyboard fuction global
 function handleKey(event, action) {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
     action();
   }
 }
-
 //Event-Listener
-
 document.getElementById("previousImg")
   .addEventListener("keydown", function (e) {
     handleKey(e, previousImg);
