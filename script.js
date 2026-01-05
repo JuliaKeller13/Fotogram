@@ -77,7 +77,6 @@ function getNotesHtml(i) {
   `;
 }
 
-
 // vorheriges/nächstes Bild im Dialog
 function previousImg() {
   currentImgIndex = (currentImgIndex - 1 + imgs.length) % imgs.length;
@@ -96,6 +95,7 @@ function handleKey(event, action) {
     action();
   }
 }
+
 //Event-Listener
 
 document.getElementById("previousImg")
@@ -112,4 +112,3 @@ document.getElementById("closeDialog")
   .addEventListener("keydown", function (e) {
     handleKey(e, closeImg);
   });
-
