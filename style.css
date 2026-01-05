@@ -55,6 +55,13 @@ h1 {
   color: white;
 }
 
+h2 {
+  font-family: Figtree;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+}
+
 .galerie {
   display: flex;
   justify-content: center;
@@ -116,7 +123,7 @@ footer {
   height: 80vh;
   width: 80vh;
   border-radius: 40px;
-  border: 0;
+  border: none;
   padding: 40px;
 }
 
@@ -126,14 +133,14 @@ dialog-mode::backdrop {
 
 
 
-.header-inner-dialog{
+.header-inner-dialog {
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.kreuz-schließen:hover{
+.kreuz-schließen:hover {
   content: url("./img/kreuz-hover.png");
   cursor: pointer;
 }
@@ -145,19 +152,19 @@ dialog-mode::backdrop {
 
 /*Footer Dialog*/
 
-.footer-inner-dialog{
+.footer-inner-dialog {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.previous-img:hover{
+.previous-img:hover {
   content: url("./img/pfeil-left-hover.png");
   cursor: pointer;
 }
 
-.next-img:hover{
+.next-img:hover {
   content: url("./img/pfeil-right-hover.png");
   cursor: pointer;
 }

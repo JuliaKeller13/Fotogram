@@ -1,4 +1,10 @@
 const dialogRef = document.getElementById("dialogMode");
+let currentImgIndex = 0; // speichert, welches Bild gerade angezeigt wird
+const bigImgRef = document.getElementById("bigImgImDialog");
+const imgNumberRef = document.getElementById("imgNumber");
+const dialogTitle = document.getElementById("dialogTitel");
+
+
 
 const imgs = [
   "./img/bird.jpg",
@@ -17,7 +23,31 @@ const imgs = [
   "./img/tree.jpg",
 ];
 
-function openImg() {
+const imgNames = [
+  "Bird",
+  "Clouded",
+  "Duck",
+  "Erde",
+  "Fields",
+  "Flowers",
+  "Landscape",
+  "Leopard",
+  "Little Bird",
+  "Mountain sky",
+  "Mountain",
+  "Night city",
+  "Street",
+  "Tree",
+];
+
+
+//Bild im Großformat, Nummer vom Bild anzeigen
+function openImg(index) {
+  currentImgIndex = index;
+  bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${index + 1}" class="big-img">`;
+  imgNumberRef.textContent = `${index + 1} / ${imgs.length}`;
+  dialogTitle.innerHTML = "";
+  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>`
   dialogRef.showModal();
 }
 
@@ -25,7 +55,7 @@ function closeImg() {
   dialogRef.close();
 }
 
-
+//Kleine Vorschaubilder
 function generateImgs() {
   const galerieRef = document.getElementById("galerie");
 
@@ -35,16 +65,18 @@ function generateImgs() {
 }
 
 function getNotesHtml(i) {
-  return `<img class="img-klein-ansicht" src="${imgs[i]}" alt="Bild ${i + 1}" onclick="openImg()">`;
+  return `<img class="img-klein-ansicht" src="${imgs[i]}" alt="Bild ${i + 1}" onclick="openImg(${i})">`;
 }
 
-//Nummer vom Bild
 
-function getNumberInDialog() {
-  const imgNumber = document.getElementById("imgNumber");
-
-  for (let i = 0; i < imgs.length; i++) {
-     imgNumber.innerHTML += `<p>${imgs[i]}/12</p>`;
-  }
-
+// vorheriges/nächstes Bild im Dialog
+function previousImg() {
+  currentImgIndex = (currentImgIndex - 1 + imgs.length) % imgs.length;
+  openImg(currentImgIndex);
 }
+
+function nextImg() {
+  currentImgIndex = (currentImgIndex + 1) % imgs.length;
+  openImg(currentImgIndex);
+}
+
