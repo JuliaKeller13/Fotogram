@@ -4,8 +4,6 @@ const bigImgRef = document.getElementById("bigImgImDialog");
 const imgNumberRef = document.getElementById("imgNumber");
 const dialogTitle = document.getElementById("dialogTitel");
 
-
-
 const imgs = [
   "./img/bird.jpg",
   "./img/clouded.jpg",
@@ -40,20 +38,6 @@ const imgNames = [
   "Baum",
 ];
 
-//Bild im Großformat, Name und Nummer vom Bild anzeigen
-function openImg(index) {
-  currentImgIndex = index;
-  bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${imgNames[index]}" class="big-img">`;
-  imgNumberRef.textContent = `${index + 1} / ${imgs.length}`; //Nummer anzeigen
-  dialogTitle.innerHTML = "";
-  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>` //Name anzeigen
-  dialogRef.showModal();
-}
-
-function closeImg() {
-  dialogRef.close();
-}
-
 //Kleine Vorschaubilder
 function generateImgs() {
   const galerieRef = document.getElementById("galerie");
@@ -74,6 +58,20 @@ function getNotesHtml(i) {
       onkeydown="handleKey(event, function () { openImg(${i}); })"
     >
   `;
+}
+
+//Bild im Großformat, Name und Nummer vom Bild anzeigen
+function openImg(index) {
+  currentImgIndex = index;
+  bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${imgNames[index]}" class="big-img">`;
+  imgNumberRef.textContent = `${index + 1} / ${imgs.length}`; //Nummer anzeigen
+  dialogTitle.innerHTML = "";
+  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>` //Name anzeigen
+  dialogRef.showModal();
+}
+
+function closeImg() {
+  dialogRef.close();
 }
 
 // vorheriges/nächstes Bild im Dialog
@@ -103,6 +101,7 @@ function handleKey(event, action) {
     action();
   }
 }
+
 //Event-Listener
 document.getElementById("previousImg")
   .addEventListener("keydown", function (e) {
