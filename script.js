@@ -24,27 +24,27 @@ const imgs = [
 ];
 
 const imgNames = [
-  "Bird",
-  "Clouded",
-  "Duck",
-  "Erde",
-  "Fields",
-  "Flowers",
-  "Landscape",
-  "Leopard",
-  "Little Bird",
-  "Mountain sky",
-  "Mountain",
-  "Night city",
-  "Street",
-  "Tree",
+  "Blaugelber Singvogel",
+  "Dunkle Gewitterwolken",
+  "Ente",
+  "Wirbelsturm aus dem Weltraum",
+  "Feld unter dem Sternenhimmel",
+  "Weiße Blumen",
+  "Sternenhimmel",
+  "Babyleoparden",
+  "Kleiner Vogel",
+  "Berge",
+  "See in den Bergen",
+  "Die Stadt bei Nacht",
+  "Straße",
+  "Baum",
 ];
 
 
 //Bild im Großformat, Name und Nummer vom Bild anzeigen
 function openImg(index) {
   currentImgIndex = index;
-  bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${index + 1}" class="big-img">`;
+  bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${imgNames[index]}" class="big-img">`;
   imgNumberRef.textContent = `${index + 1} / ${imgs.length}`; //Nummer anzeigen
   dialogTitle.innerHTML = "";
   dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>` //Name anzeigen
@@ -79,4 +79,3 @@ function nextImg() {
   currentImgIndex = (currentImgIndex + 1) % imgs.length;
   openImg(currentImgIndex);
 }
-
