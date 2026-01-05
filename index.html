@@ -20,22 +20,25 @@
       <section class="galerie" id="galerie"></section>
 
       <dialog class="dialog-mode" id="dialogMode" aria-labelledby="dialogTitel" aria-describedby="dialogDescription">
-        <header>
-          <div class="header-inner-dialog" >
-            <h2 id="dialogTitel"></h2>
-            <img class="kreuz-schließen" src="./img/kreuz.png" alt="Kreuz zum Fenster schließen" onclick="closeImg()">
-          </div>
-        </header>
-        <section>
-          <div id="bigImgImDialog" ></div>
-        </section>
-        <footer>
-          <div class="footer-inner-dialog">
-            <img class="previous-img" src="./img/pfeil-left.png" alt="Pfeil zun nächsten Bild" onclick="previousImg()">
-            <div class="img-number" id="imgNumber"></div>
-            <img class="next-img" src="./img/pfeil-right.png" alt="Pfeil zun vorheriges Bild" onclick="nextImg()">
-          </div>
-        </footer>
+        <div class="dialog-mode-inner">
+          <header>
+            <div class="header-inner-dialog">
+              <h2 id="dialogTitel"></h2>
+              <img class="kreuz-schließen" src="./img/kreuz.png" alt="Kreuz zum Fenster schließen" onclick="closeImg()">
+            </div>
+          </header>
+          <section class="dialog-section-big-img">
+            <div id="bigImgImDialog"></div>
+          </section>
+          <footer>
+            <div class="footer-inner-dialog">
+              <img class="previous-img" src="./img/pfeil-left.png" alt="Pfeil zun nächsten Bild"
+                onclick="previousImg()">
+              <div class="img-number" id="imgNumber"></div>
+              <img class="next-img" src="./img/pfeil-right.png" alt="Pfeil zun vorheriges Bild" onclick="nextImg()">
+            </div>
+          </footer>
+        </div>
       </dialog>
     </div>
   </main>
