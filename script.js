@@ -66,7 +66,7 @@ function openImg(index) {
   bigImgRef.innerHTML = `<img src="${imgs[index]}" alt="Bild ${imgNames[index]}" class="big-img">`;
   imgNumberRef.textContent = `${index + 1} / ${imgs.length}`; //Nummer anzeigen
   dialogTitle.innerHTML = "";
-  dialogTitle.innerHTML += `<h2 id="dialogTitel">${imgNames[index]}</h2>` //Name anzeigen
+  dialogTitle.innerHTML += `<h2 id="imgTitel">${imgNames[index]}</h2>` //Name anzeigen
   dialogRef.showModal();
 }
 
@@ -103,17 +103,35 @@ function handleKey(event, action) {
 }
 
 //Event-Listener
+//Dialog schließen
+document.getElementById("closeDialog")
+  .addEventListener("keydown", function (e) {
+    handleKey(e, closeImg);
+  });
+
+
+// Pfeiltastensteuerung
+
+function arrowsKeysLeft(event, action) {
+  if (event.key === 'ArrowLeft' || event.key === " ") {
+    event.preventDefault();
+    action()
+  }
+}
+
+function arrowsKeysRight(event, action) {
+  if (event.key === 'ArrowRight' || event.key === " ") {
+    event.preventDefault();
+    action()
+  }
+}
+
 document.getElementById("previousImg")
   .addEventListener("keydown", function (e) {
-    handleKey(e, previousImg);
+    arrowsKeysLeft(e, previousImg);
   });
 
 document.getElementById("nextImg")
   .addEventListener("keydown", function (e) {
-    handleKey(e, nextImg);
-  });
-
-document.getElementById("closeDialog")
-  .addEventListener("keydown", function (e) {
-    handleKey(e, closeImg);
+    arrowsKeysRight(e, nextImg);
   });
