@@ -91,6 +91,7 @@ main {
 
 .img-klein-ansicht:hover {
   border-color: #6bc1e1;
+  cursor: pointer;
 }
 
 /*Footer*/
