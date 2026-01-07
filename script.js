@@ -102,36 +102,24 @@ function handleKey(event, action) {
   }
 }
 
-//Event-Listener
 //Dialog schließen
 document.getElementById("closeDialog")
   .addEventListener("keydown", function (e) {
     handleKey(e, closeImg);
   });
 
-
 // Pfeiltastensteuerung
+document.addEventListener("keydown", function (event) {
 
-function arrowsKeysLeft(event, action) {
-  if (event.key === 'ArrowLeft' || event.key === " ") {
+  if (!dialogRef.open) return;//weiter nur, wenn Dialog geöffnet ist
+
+  if (event.key === "ArrowLeft") {
     event.preventDefault();
-    action()
+    previousImg();
   }
-}
 
-function arrowsKeysRight(event, action) {
-  if (event.key === 'ArrowRight' || event.key === " ") {
+  if (event.key === "ArrowRight") {
     event.preventDefault();
-    action()
+    nextImg();
   }
-}
-
-document.getElementById("previousImg")
-  .addEventListener("keydown", function (e) {
-    arrowsKeysLeft(e, previousImg);
-  });
-
-document.getElementById("nextImg")
-  .addEventListener("keydown", function (e) {
-    arrowsKeysRight(e, nextImg);
-  });
+});
